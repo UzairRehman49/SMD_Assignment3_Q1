@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SMD_Assignment3</string>
+    <string name="title_activity_add__contact">Add_Contact</string>
 </resources>

@@ -5,10 +5,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ContactList extends AppCompatActivity {
 
@@ -20,18 +25,26 @@ public class ContactList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        List<ContactEntity> contactEntities = null;
         setContentView(R.layout.activity_contact_list);
+        FloatingActionButton AddContact= findViewById(R.id.addContact);
         recyclerView = findViewById(R.id.recyclerview);
-        initdata();
+       contactEntities = initdata(contactEntities);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-         mAdapter = new MyAdapter(mImages,mImageNames,this);
+        mAdapter = new MyAdapter(contactEntities,this);
         recyclerView.setAdapter(mAdapter);
+        AddContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i =new Intent(ContactList.this,Add_Contact.class);
+                startActivity(i);
+            }
+        });
+
     }
-    public void initdata()
+    public List<ContactEntity> initdata(List<ContactEntity>list)
     {
-        mImageNames.add("Uzair");
-        mImageNames.add("Meghan");
-
-
+        list = MainActivity.db.userDao().getAll();
+        return list;
     }
 }
