@@ -13,12 +13,10 @@
         android:layout_height="64dp"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,143 +29,158 @@
             tools:layout_editor_absoluteY="22dp" />
     </Toolbar>
 
-    <LinearLayout
-        android:id="@+id/linearLayout4"
+    <ScrollView
+        android:layout_width="416dp"
+        android:layout_height="602dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="411dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.014"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clipToPadding="true"
-        android:orientation="vertical"
-        android:paddingTop="10dp"
-        android:paddingBottom="50dp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.543">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp"
-            android:text="First Name"
-            android:textSize="18sp"
-            android:textStyle="bold"></TextView>
-
-        <EditText
-            android:id="@+id/firstName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="5dp"
-            android:hint="Enter The First Name"
-            android:inputType="text"></EditText>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginBottom="5dp"
-            android:text="Last Name"
-            android:textSize="18sp"
-            android:textStyle="bold"></TextView>
-
-        <EditText
-            android:id="@+id/lastName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="5dp"
-            android:hint="Enter the Last Name"
-            android:inputType="text"></EditText>
-
-        <RelativeLayout
-            android:id="@+id/layout"
-            android:layout_width="match_parent"
-            android:layout_height="92dp"
-            android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="408dp"
+            android:layout_height="584dp"
+            android:clipToPadding="true"
+            android:orientation="vertical"
+            android:paddingTop="10dp"
+            android:paddingBottom="50dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
             <TextView
-                android:id="@+id/TextViewContact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="10dp"
-                android:padding="5dp"
-                android:text="Contact Number"
+                android:layout_marginBottom="5dp"
+                android:text="First Name"
                 android:textSize="18sp"
                 android:textStyle="bold"></TextView>
 
             <EditText
-                android:id="@+id/contactNum"
+                android:id="@+id/firstName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@id/TextViewContact"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="38dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="5dp"
-                android:hint="03XX-XXXXXXX"
+                android:hint="Enter The First Name"
                 android:inputType="text"></EditText>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/contactadd"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="40dp"
-                android:clickable="true"
-                android:foregroundGravity="center"
-                app:fabSize="mini"
-                app:srcCompat="@android:drawable/ic_input_add" />
-        </RelativeLayout>
+                android:layout_margin="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Last Name"
+                android:textSize="18sp"
+                android:textStyle="bold"></TextView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginBottom="5dp"
-            android:text="Email Address"
-            android:textSize="18sp"
-            android:textStyle="bold"></TextView>
+            <EditText
+                android:id="@+id/lastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:hint="Enter the Last Name"
+                android:inputType="text"></EditText>
 
-        <EditText
-            android:id="@+id/emailID"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="5dp"
-            android:hint="Email Address"
-            android:inputType="text"></EditText>
+            <LinearLayout
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="0dp"
-            android:background="#E5EEED"
-            android:text="Add Image" />
+                <LinearLayout
+                    android:id="@+id/linearlayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-        <Button
-            android:id="@+id/Save"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@color/colorPrimary"
-            android:text="Save Contact" />
+                    <TextView
+                        android:id="@+id/TextViewContact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="174dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toStartOf="@+id/contactadd"
+                        android:padding="5dp"
+                        android:text="Contact Number"
+                        android:textSize="18sp"
+                        android:textStyle="bold"></TextView>
 
+                    <EditText
+                        android:id="@+id/contactNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Enter Phone Number"
+                        android:inputType="phone" />
 
-    </LinearLayout>
+                </LinearLayout>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/contactadd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="58dp"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentEnd="false"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginEnd="40dp"
+                    android:clickable="true"
+                    android:foregroundGravity="center"
+                    app:fabSize="mini"
+                    app:srcCompat="@android:drawable/ic_input_add" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Email Address"
+                android:textSize="18sp"
+                android:textStyle="bold"></TextView>
+
+            <EditText
+                android:id="@+id/emailID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:hint="Email Address"
+                android:inputType="text"></EditText>
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="0dp"
+                android:background="#E5EEED"
+                android:text="Add Image" />
+
+            <Button
+                android:id="@+id/Save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@color/colorPrimaryDark"
+                android:text="Save Contact" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

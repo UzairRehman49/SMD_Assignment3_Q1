@@ -25,11 +25,13 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     List<ContactEntity>contacts = null;
+    List<ContactNum>Numbers=null;
     private Context context;
 
-    public MyAdapter(List<ContactEntity> contacts, Context context) {
+    public MyAdapter(List<ContactEntity> contacts,List<ContactNum>Numbers, Context context) {
         this.contacts = contacts;
         this.context = context;
+        this.Numbers = Numbers;
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
@@ -74,6 +76,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 Gson gson = new Gson();
                 String myJson = gson.toJson(contacts.get(position));
                 i.putExtra("myjson", myJson);
+//                i.putExtra("size",Numbers.size());
+                String num = gson.toJson(Numbers);
+
+                i.putExtra("Numbers", num);
               //  Toast.makeText(context,"Recycler View Pressed "+mImageNames.get(position),Toast.LENGTH_LONG).show();
              context.startActivity(i);
             }

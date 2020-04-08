@@ -10,16 +10,13 @@ public class ContactEntity {
 
 
         @PrimaryKey(autoGenerate = true)
-        public int uid;
+        public long uid;
 
         @ColumnInfo(name = "first_name")
         public String firstName;
 
         @ColumnInfo(name = "last_name")
         public String lastName;
-
-        @ColumnInfo(name = "Contact No")
-        public String Phone;
 
         @ColumnInfo(name = "Email")
         public String Email;

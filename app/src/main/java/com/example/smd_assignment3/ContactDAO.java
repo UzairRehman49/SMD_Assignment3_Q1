@@ -14,5 +14,5 @@ public interface ContactDAO {
         @Query("SELECT * FROM Contact")
         List<ContactEntity> getAll();
         @Insert
-        void insertAll(ContactEntity... users);
+        Long insertAll(ContactEntity users);
 }

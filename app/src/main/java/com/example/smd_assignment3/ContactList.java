@@ -26,12 +26,14 @@ public class ContactList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         List<ContactEntity> contactEntities = null;
+        List<ContactNum> Numbers = null;
         setContentView(R.layout.activity_contact_list);
         FloatingActionButton AddContact= findViewById(R.id.addContact);
         recyclerView = findViewById(R.id.recyclerview);
        contactEntities = initdata(contactEntities);
+       //Numbers=initnum(Numbers);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mAdapter = new MyAdapter(contactEntities,this);
+        mAdapter = new MyAdapter(contactEntities,Numbers,ContactList.this);
         recyclerView.setAdapter(mAdapter);
         AddContact.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +47,13 @@ public class ContactList extends AppCompatActivity {
     public List<ContactEntity> initdata(List<ContactEntity>list)
     {
         list = MainActivity.db.userDao().getAll();
+
         return list;
     }
+//    public List<ContactNum> initnum(List<ContactNum>nums)
+//    {
+//        nums = MainActivity.db.NumDao().getAll();
+//
+//        return nums;
+//    }
 }
